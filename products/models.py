@@ -19,6 +19,12 @@ class Product(models.Model):
         return reverse('product_detail', args=[self.pk])
 
 
+# custom comment manager
+class ActiveCommentsManger(models.Manager):
+    def get_queryset(self):
+        return super(ActiveCommentsManger, self).get_queryset().filter(active=True)
+
+
 class Comment(models.Model):
     PRODUCT_STARS = [
         ('1', '1 star'),
@@ -30,13 +36,17 @@ class Comment(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField()
-    stars = models.CharField(max_length=10, choices=PRODUCT_STARS)
+    body = models.TextField(verbose_name="Comment Text")
+    stars = models.CharField(max_length=10, choices=PRODUCT_STARS, verbose_name="what is your score")
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
 
     active = models.BooleanField(default=True)
+
+    # custom comment manager
+    objects = models.Manager()
+    active_comments_manager = ActiveCommentsManger()
 
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.product.id])

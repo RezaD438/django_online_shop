@@ -4,11 +4,18 @@ from django.contrib.auth.admin import UserAdmin
 from .models import Product, Comment
 
 
+class CommentsInLine(admin.TabularInline):  # admon.StackInLine
+    model = Comment
+    fields = ['product', 'author', 'body', 'stars', ]
+    extra = 0
+
+
 @admin.register(Product)
-class CustomUserAdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'description', 'price', 'active', 'datetime_modified', ]
+    inlines = [CommentsInLine, ]
 
 
 @admin.register(Comment)
-class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ['product', 'author', 'body', 'stars', 'datetime_created', ]
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['product', 'author', 'active', 'body', 'stars', 'datetime_created', ]

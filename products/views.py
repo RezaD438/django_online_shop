@@ -30,8 +30,7 @@ class ProductDetailView(generic.DetailView):
 
 
 class CommentCreateView(generic.CreateView):
-    # model = Comment
-    queryset = Product.objects.filter(active=True)
+    model = Comment
     form_class = CommentForm
 
     def form_valid(self, form):
