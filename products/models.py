@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
@@ -27,17 +28,18 @@ class ActiveCommentsManger(models.Manager):
 
 class Comment(models.Model):
     PRODUCT_STARS = [
-        ('1', '1 star'),
-        ('2', '2 star'),
-        ('3', '3 star'),
-        ('4', '4 star'),
-        ('5', '5 star'),
+        ('1', _('1 star')),
+        ('2', _('2 star')),
+        ('3', _('3 star')),
+        ('4', _('4 star')),
+        ('5', _('5 star')),
     ]
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField(verbose_name="Comment Text")
-    stars = models.CharField(max_length=10, choices=PRODUCT_STARS, verbose_name="what is your score")
+    body = models.TextField(verbose_name=_("Comment Text"))
+    stars = models.CharField(max_length=10, choices=PRODUCT_STARS,
+                             verbose_name=_("what is your score to this product?"))
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
