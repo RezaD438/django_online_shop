@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-28 23:10+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2023-03-28 23:32+0330\n"
+"Last-Translator:   <rezadavoodi438@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\models.py:31
 msgid "1 star"
@@ -76,7 +77,7 @@ msgstr "نظرات"
 
 #: .\templates\products\product_detail.html:154
 msgid "Comments On"
-msgstr ""
+msgstr "نظرات بر روی"
 
 #: .\templates\products\product_detail.html:188
 msgid "Leave a Comment"

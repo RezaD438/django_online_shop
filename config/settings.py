@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+from django.contrib.messages import constants
 
 from pathlib import Path
 from environs import Env
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
 
     # by RD
+    'rosetta',
     'accounts',
     'pages',
     'products',
@@ -126,6 +128,11 @@ LANGUAGE_CODE = 'fa'
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Tehran'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -171,3 +178,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "rezadavoodi4388@gmail.com"
 EMAIL_HOST_PASSWORD = "zpokunbtuxntkvoz"
+
+# fixing error from messages
+
+# from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.ERROR: 'danger' # chon toye bootstrap messages error nadarim bejash danger darim
+}
