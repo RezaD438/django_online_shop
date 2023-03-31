@@ -195,16 +195,23 @@
                                             <div class="row">
                                                 <div class="border-top py-5 w-100"></div>
                                                 <div class="col-lg-8 m-auto">
-                                                    <span class="reply-title pull-right">{% trans 'Leave a Comment' %}</span>
-                                                    <br>
-                                                    <form action="{% url 'comment_create' product.id %}" method="POST"
-                                                          class="form text-right">
+                                                    {% if user.is_authenticated %}
+                                                        <span class="reply-title pull-right">{% trans 'Leave a Comment' %}</span>
+                                                        <br>
+                                                        <form action="{% url 'comment_create' product.id %}"
+                                                              method="POST"
+                                                              class="form text-right">
 
-                                                        {% csrf_token %}
-                                                        {{ comment_form|crispy }}
+                                                            {% csrf_token %}
+                                                            {{ comment_form|crispy }}
 
-                                                        <input type="submit" value="{% trans 'send' %}">
-                                                    </form>
+                                                            <input type="submit" value="{% trans 'send' %}">
+                                                        </form>
+                                                    {% else %}
+                                                        <p>To Submit a comment please
+                                                            <a href="{% url 'account_login' %}">Login</a>
+                                                        </p>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>

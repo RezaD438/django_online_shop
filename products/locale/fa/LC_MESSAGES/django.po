@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 23:10+0330\n"
-"PO-Revision-Date: 2023-03-28 23:32+0330\n"
+"POT-Creation-Date: 2023-03-31 14:34+0330\n"
+"PO-Revision-Date: 2023-03-31 14:51+0330\n"
 "Last-Translator:   <rezadavoodi438@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -55,34 +55,34 @@ msgstr "جزئیات محصول"
 msgid "Toman"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:55
+#: .\templates\products\product_detail.html:63
 msgid "Add to cart"
 msgstr "اضافه کردن به سبد خرید"
 
-#: .\templates\products\product_detail.html:59
+#: .\templates\products\product_detail.html:69
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:75
+#: .\templates\products\product_detail.html:85
 msgid "product description"
 msgstr "توضحات محصول"
 
-#: .\templates\products\product_detail.html:79
+#: .\templates\products\product_detail.html:89
 msgid "Product Features"
 msgstr "ویژگی های محصول"
 
-#: .\templates\products\product_detail.html:83
+#: .\templates\products\product_detail.html:93
 msgid "Comments"
 msgstr "نظرات"
 
-#: .\templates\products\product_detail.html:154
+#: .\templates\products\product_detail.html:164
 msgid "Comments On"
 msgstr "نظرات بر روی"
 
-#: .\templates\products\product_detail.html:188
+#: .\templates\products\product_detail.html:199
 msgid "Leave a Comment"
-msgstr "نظرات روی"
+msgstr "نظر بدهید :"
 
-#: .\templates\products\product_detail.html:196
+#: .\templates\products\product_detail.html:208
 msgid "send"
 msgstr "ارسال"

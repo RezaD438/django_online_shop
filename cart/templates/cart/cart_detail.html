@@ -7,6 +7,7 @@
 
 {% block content %}
 
+
     <!-- Breadcrumb area Start -->
     <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
         <div class="container">
@@ -20,6 +21,19 @@
         </div>
     </div>
     <!-- Breadcrumb area End -->
+
+    <!-- messages area Start -->
+    {% if messages %}
+        <div class="container mt--10">
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <!-- messages area ٍدی -->
+
 
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
@@ -93,9 +107,8 @@
                                         </table>
                                     </div>
                                 {% else %}
-                                    <p>
-                                        <a href="{% url 'product_list' %}">{% trans "Your cart is empty. Let's go shoping" %}</a>
-                                    </p>
+                                    <p>{% trans "Your cart is empty." %}</p>
+                                    <a href="{% url 'product_list' %}">{% trans "Let's Go shoping" %}</a>
                                 {% endif %}
                             </div>
                         </div>

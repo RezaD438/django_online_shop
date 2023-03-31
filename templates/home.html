@@ -9,7 +9,7 @@
     <h1>HOME</h1>
     <h1>HOME</h1>
     {% if messages %}
-        <div>
+        <div class="container">
             <ul class="messages">
                 {% for message in messages %}
                     <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
