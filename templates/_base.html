@@ -169,6 +169,98 @@
     </footer>
     <!-- Footer End-->
 
+
+    <!-- Footer Start-->
+    <footer class="footer">
+        <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 text-center">
+                        <div class="footer-widget mb--50">
+                            <div class="textwidget">
+                                <img src="assets/img/codingyar_logo.png" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="footer-widget mb--50 pb--1">
+                            <ul class="footer-menu">
+                                <li><a href="">درباره ما</a></li>
+                                <li><a href="">قوانین و مقررات</a></li>
+                                <li><a href="">تماس با ما</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget">
+                            Codingyar.com © | all rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+
+    <!-- Search form Popup Start -->
+    <div class="searchform__popup" id="searchForm">
+        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+        <div class="searchform__body">
+            <p>در باکس زیر عبارت خود را وارد کنید</p>
+            <form class="searchform">
+                <input type="text" name="popup-search" id="popup-search" class="searchform__input"
+                       placeholder="جستجو در بین محصولات...">
+                <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Search form Popup End -->
+
+    <!-- Mini Cart Start -->
+    <aside class="mini-cart" id="miniCart">
+        <div class="mini-cart-wrapper">
+            <a href="" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+            <div class="mini-cart-inner">
+                <h3 class="mini-cart__heading mb--40 mb-lg--30 text-right">{% trans 'Cart' %}</h3>
+                <div class="mini-cart__content">
+                    <ul class="mini-cart__list text-right">
+                        {% for item in cart %}
+                            <li class="mini-cart__product d-flex justify-content-between">
+                                <div class="mini-cart__product__image">
+                                    <a href="#">
+                                        <img src="{% static 'img/products/prod-1-100x100.jpg' %}" alt="products">
+                                    </a>
+                                </div>
+                                <div class="mini-cart__product__content pt-2">
+                                    <span class="mini-cart__product__title d-flex flex-row justify-content-between">
+                                        <a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
+                                        <a href="#" class="">
+                                            &#10060;
+                                        </a>
+                                    </span>
+                                    <span class="mini-cart__product__quantity">
+                                        <span>{{ item.product_obj.price }}</span> &#215; <span>{{ item.quantity }}</span>
+                                    </span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="mini-cart__total">
+                        <span>{% trans 'total' %}</span>
+                        <span class="ammount">{{ cart.get_total_price }}</span>
+                    </div>
+                    <div class="mini-cart__buttons">
+                        <a href="{% url 'cart_detail' %}"
+                           class="btn btn-fullwidth btn-bg-sand mb--20">{% trans 'Go to cart' %}</a>
+                        <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">{% trans 'checkout' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Mini Cart End -->
+
+    <!-- Global Overlay Start -->
+    <div class="ShoppingYar-global-overlay"></div>
+    <!-- Global Overlay End -->
+
 </div>
 
 <!-- ************************* JS Files ************************* -->
