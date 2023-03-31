@@ -47,12 +47,13 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'rosetta',
 
     # by RD
-    'rosetta',
     'accounts',
     'pages',
     'products',
+    'cart'
 ]
 
 MIDDLEWARE = [
