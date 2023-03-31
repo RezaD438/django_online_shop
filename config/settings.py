@@ -79,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # context processors by RD
+                'cart.context_processors.cart'
             ],
         },
     },
@@ -185,5 +187,5 @@ EMAIL_HOST_PASSWORD = "zpokunbtuxntkvoz"
 # from django.contrib.messages import constants
 
 MESSAGE_TAGS = {
-    constants.ERROR: 'danger' # chon toye bootstrap messages error nadarim bejash danger darim
+    constants.ERROR: 'danger'  # chon toye bootstrap messages error nadarim bejash danger darim
 }

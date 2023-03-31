@@ -1,4 +1,6 @@
 {% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -89,7 +91,7 @@
                             <li class="header-toolbar__item mini-cart-item">
                                 <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
                                     <i class="flaticon flaticon-shopping-cart"></i>
-                                    <sup class="mini-cart-count">2</sup>
+                                    <sup class="mini-cart-count">{{ cart|length }}</sup>
                                 </a>
                             </li>
                             <li class="header-toolbar__item user-info">
@@ -114,7 +116,7 @@
                                         </li>
                                     {% endif %}
                                     <li>
-                                        <a class="text-right" href="{% url 'accounts_signup' %}">سبد خرید</a>
+                                        <a class="text-right" href="{% url 'account_signup' %}">سبد خرید</a>
                                     </li>
                                 </ul>
                             </li>
