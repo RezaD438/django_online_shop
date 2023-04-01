@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'jalali_date',
+    'ckeditor',
 
     # by RD
     'accounts',
@@ -152,6 +153,7 @@ USE_TZ = True
 # static files config
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media fiels
 MEDIA_URL = '/media/'
