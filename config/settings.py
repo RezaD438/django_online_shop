@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rosetta',
+    'jalali_date',
 
     # by RD
     'accounts',
@@ -195,3 +196,5 @@ EMAIL_HOST_PASSWORD = "zpokunbtuxntkvoz"
 MESSAGE_TAGS = {
     constants.ERROR: 'danger'  # chon toye bootstrap messages error nadarim bejash danger darim
 }
+
+# jalali date settings
