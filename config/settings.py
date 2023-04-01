@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.humanize',  # ba inke app django e vali pishfarz inja nist bayad dasti ezafe konim
+
     # 3rd party apps
     'crispy_forms',
     'crispy_bootstrap5',

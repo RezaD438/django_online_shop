@@ -1,6 +1,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load persian_translation_tags %}
+{% load humanize %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -241,7 +244,7 @@
                                         </a>
                                     </span>
                                     <span class="mini-cart__product__quantity">
-                                        <span>{{ item.product_obj.price }}</span> &#215; <span>{{ item.quantity }}</span>
+                                        <span>{{ item.product_obj.price|intcomma:False|translate_numer }}</span> &#215; <span>{{ item.quantity|intcomma:False|translate_numer }}</span>
                                     </span>
                                 </div>
                             </li>
@@ -249,7 +252,7 @@
                     </ul>
                     <div class="mini-cart__total">
                         <span>{% trans 'total' %}</span>
-                        <span class="ammount">{{ cart.get_total_price }}</span>
+                        <span class="ammount">{{ cart.get_total_price|intcomma:False|translate_numer }}</span>
                     </div>
                     <div class="mini-cart__buttons">
                         <a href="{% url 'cart_detail' %}"
