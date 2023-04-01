@@ -4,6 +4,7 @@
 {% load comment_tags %}
 {% load i18n %}
 {% load jalali_tags %}
+{% load persian_translation_tags %}
 
 {% block page_title %}{{ product.title }}{% endblock %}
 
@@ -48,7 +49,7 @@
                                 {{ product.description|linebreaks }}
                             </p>
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ product.price }} {% trans 'Toman' %}</span>
+                                <span class="money text-success">{{ product.price|translate_numer }} {% trans 'Toman' %}</span>
                                 <span class="price-separator">-</span>
                                 <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>
                             </div>
@@ -179,10 +180,12 @@
                                                             <div class="d-flex flex-sm-row flex-row">
                                                                 <img src="{% static 'img/others/comment-1.jpg' %}"
                                                                      alt="Review Avatar" class="review__avatar p-4">
-                                                                <div>                          {#b be jaye m mah ro be sorat kho va B mah ro be sorat khordad neshon mide#}
-                                                                    <div class="review__meta"> {#Y sal ro be sorat 1401 neshon mide vali y sal ro be sorat 01 neshon mide#}
-                                                                        <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d'}}</span>
-{#                                                                        <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%y/%b/%d _ %H:%M:%S' }}</span>#}
+                                                                <div>
+                                                                    {#b be jaye m mah ro be sorat kho va B mah ro be sorat khordad neshon mide#}
+                                                                    <div class="review__meta">
+                                                                        {#Y sal ro be sorat 1401 neshon mide vali y sal ro be sorat 01 neshon mide#}
+                                                                        <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%m/%d' }}</span>
+                                                                        {#                                                                        <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%y/%b/%d _ %H:%M:%S' }}</span>#}
                                                                         <span class="review__dash">-</span>
                                                                         <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                     </div>
