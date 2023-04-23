@@ -80,7 +80,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price|intcomma:False|translate_numer }}</span>
+                                                                <span class="money">{{ item.product_obj.price|intcomma:False|translate_number }}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -105,7 +105,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                     <span class="product-price-wrapper">
-                                                        <span class="money">{{ item.total_price|intcomma:False|translate_numer }}</span>
+                                                        <span class="money">{{ item.total_price|intcomma:False|translate_number }}</span>
                                                     </span>
                                                     </td>
                                                 </tr>
@@ -135,7 +135,7 @@
                                             <span>مجموع</span>
                                         </div>
                                         <div class="cart-calculator__item--value">
-                                            <span>{{ cart.get_total_price|intcomma:False|translate_numer }} تومان</span>
+                                            <span>{{ cart.get_total_price|intcomma:False|translate_number }} تومان</span>
                                         </div>
                                     </div>
                                 </div>

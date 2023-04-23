@@ -244,7 +244,7 @@
                                         </a>
                                     </span>
                                     <span class="mini-cart__product__quantity">
-                                        <span>{{ item.product_obj.price|intcomma:False|translate_numer }}</span> &#215; <span>{{ item.quantity|intcomma:False|translate_numer }}</span>
+                                        <span>{{ item.product_obj.price|intcomma:False|translate_number }}</span> &#215; <span>{{ item.quantity|intcomma:False|translate_number }}</span>
                                     </span>
                                 </div>
                             </li>
@@ -252,7 +252,7 @@
                     </ul>
                     <div class="mini-cart__total">
                         <span>{% trans 'total' %}</span>
-                        <span class="ammount">{{ cart.get_total_price|intcomma:False|translate_numer }}</span>
+                        <span class="ammount">{{ cart.get_total_price|intcomma:False|translate_number }}</span>
                     </div>
                     <div class="mini-cart__buttons">
                         <a href="{% url 'cart_detail' %}"
