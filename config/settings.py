@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'jalali_date',
-    'ckeditor',
+    'ckeditor',  # need to do docker-compose exec web python manage.py collectstatic
 
     # by RD
     'accounts',
