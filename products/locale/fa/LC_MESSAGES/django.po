@@ -52,10 +52,12 @@ msgid "Product detail"
 msgstr "جزئیات محصول"
 
 #: .\templates\products\product_detail.html:42
+#: .\templates\products\product_list.html:66
 msgid "Toman"
 msgstr "تومان"
 
 #: .\templates\products\product_detail.html:63
+#: .\templates\products\product_list.html:70
 msgid "Add to cart"
 msgstr "اضافه کردن به سبد خرید"
 
