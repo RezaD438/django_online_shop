@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def order_create_view(reqeust):
+    return render(reqeust, 'order/order_create.html')
