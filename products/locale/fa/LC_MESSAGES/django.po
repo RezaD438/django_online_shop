@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-31 14:34+0330\n"
+"POT-Creation-Date: 2023-04-24 17:28+0330\n"
 "PO-Revision-Date: 2023-03-31 14:51+0330\n"
 "Last-Translator:   <rezadavoodi438@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,72 +19,78 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:31
+#: .\models.py:16
+#, fuzzy
+#| msgid "Product Features"
+msgid "Product Image"
+msgstr "ویژگی های محصول"
+
+#: .\models.py:38
 msgid "1 star"
 msgstr "1 ستاره"
 
-#: .\models.py:32
+#: .\models.py:39
 msgid "2 star"
 msgstr "2 ستاره"
 
-#: .\models.py:33
+#: .\models.py:40
 msgid "3 star"
 msgstr "3 ستاره"
 
-#: .\models.py:34
+#: .\models.py:41
 msgid "4 star"
 msgstr "4 ستاره"
 
-#: .\models.py:35
+#: .\models.py:42
 msgid "5 star"
 msgstr "5 ستاره"
 
-#: .\models.py:40
+#: .\models.py:47
 msgid "Comment Text"
 msgstr "متن نظر"
 
-#: .\models.py:42
+#: .\models.py:49
 msgid "what is your score to this product?"
 msgstr "امتیاز شما به این محصول چیست؟"
 
-#: .\templates\products\product_detail.html:17
+#: .\templates\products\product_detail.html:21
 msgid "Product detail"
 msgstr "جزئیات محصول"
 
-#: .\templates\products\product_detail.html:42
-#: .\templates\products\product_list.html:66
+#: .\templates\products\product_detail.html:53
+#: .\templates\products\product_list.html:74
 msgid "Toman"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:63
-#: .\templates\products\product_list.html:70
+#: .\templates\products\product_detail.html:74
+#: .\templates\products\product_list.html:87
 msgid "Add to cart"
 msgstr "اضافه کردن به سبد خرید"
 
-#: .\templates\products\product_detail.html:69
+#: .\templates\products\product_detail.html:80
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:85
+#: .\templates\products\product_detail.html:96
 msgid "product description"
 msgstr "توضحات محصول"
 
-#: .\templates\products\product_detail.html:89
+#: .\templates\products\product_detail.html:100
 msgid "Product Features"
 msgstr "ویژگی های محصول"
 
-#: .\templates\products\product_detail.html:93
+#: .\templates\products\product_detail.html:104
 msgid "Comments"
 msgstr "نظرات"
 
-#: .\templates\products\product_detail.html:164
+#: .\templates\products\product_detail.html:143
 msgid "Comments On"
 msgstr "نظرات بر روی"
 
-#: .\templates\products\product_detail.html:199
+#: .\templates\products\product_detail.html:181
 msgid "Leave a Comment"
 msgstr "نظر بدهید :"
 
-#: .\templates\products\product_detail.html:208
+#: .\templates\products\product_detail.html:190
 msgid "send"
 msgstr "ارسال"
