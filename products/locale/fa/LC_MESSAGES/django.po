@@ -94,3 +94,35 @@ msgstr "نظر بدهید :"
 #: .\templates\products\product_detail.html:190
 msgid "send"
 msgstr "ارسال"
+
+#: .\_base.html:108
+msgid "Logout"
+msgstr "ورود"
+
+#: .\_base.html:111
+msgid "Profile"
+msgstr "پروفایل"
+
+#: .\_base.html:115
+msgid "Login"
+msgstr "ورود"
+
+#: .\_base.html:118
+msgid "Signup"
+msgstr "ثبت نام"
+
+#: .\_base.html:229
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\_base.html:254
+msgid "total"
+msgstr "جمع کل"
+
+#: .\_base.html:259
+msgid "Go to cart"
+msgstr "مشاهده سبد خربد"
+
+#: .\_base.html:261
+msgid "checkout"
+msgstr "تسویه حساب"
