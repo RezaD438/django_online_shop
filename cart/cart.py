@@ -76,7 +76,5 @@ class Cart:
         del self.session['cart']
         self.save()
 
-        messages.error(self.request, _('You have successfully cleared your cart'))
-
     def get_total_price(self):
         return sum(item['quantity'] * item['product_obj'].price for item in self.cart.values())

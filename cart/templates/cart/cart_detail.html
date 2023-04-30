@@ -29,19 +29,6 @@
     {% include 'topheader.html' with header_name=x %}
     <!-- Breadcrumb area End -->
 
-    <!-- messages area Start -->
-    {% if messages %}
-        <div class="container mt--10">
-            <ul class="messages">
-                {% for message in messages %}
-                    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-    <!-- messages area ٍدی -->
-
-
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner ptb--80">
@@ -70,7 +57,7 @@
                                                             href="{% url 'remove_cart' item.product_obj.id %}"><i
                                                             class="flaticon flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-left">
-                                                        <img src="{% static 'img/products/prod-10-70x88.jpg' %}"
+                                                        <img src="{{ item.product_obj.image.url }}" %}
                                                              alt="Product Thumnail">
                                                     </td>
                                                     <td class="product-name">
@@ -119,11 +106,14 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <div class="row no-gutters border-top pt--20 mt--20">
-                            <div class="col-sm-6 text-sm-right">
-                                <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                        <form action="{% url 'clear_cart' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row no-gutters border-top pt--20 mt--20">
+                                <div class="col-sm-6 text-sm-right">
+                                    <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="col-lg-4">
                         <div class="cart-collaterals">
@@ -140,7 +130,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
+                            <a href="{% url 'order_create' %}"
+                               class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
                                 ثبت سفارش
                             </a>
                         </div>

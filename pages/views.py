@@ -4,10 +4,7 @@ from django.contrib import messages
 
 
 def messages_home(request):
-    messages.success(request, 'This is success')
-    messages.warning(request, 'This is warning')
-    messages.error(request, 'This is error')
-    return render(request, 'home.html')
+    return render(request, 'pages/home.html')
 
 
 # class HomePageView(TemplateView):

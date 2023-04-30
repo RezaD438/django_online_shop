@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-29 16:59+0330\n"
+"POT-Creation-Date: 2023-04-30 00:43+0330\n"
 "PO-Revision-Date: 2023-04-29 16:55+0330\n"
 "Last-Translator:   <rezadavoodi438@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,9 @@ msgstr ""
 
 #: .\form.py:15
 msgid "If you have any notes please enter here otherwise leave it empty"
-msgstr "اگر یادداشتی دارید لطفا اینجا را وارد کنید در غیر این صورت اینجا را خالی بگذارید"
+msgstr ""
+"اگر یادداشتی دارید لطفا اینجا را وارد کنید در غیر این صورت اینجا را خالی "
+"بگذارید"
 
 #: .\models.py:7
 msgid "User"
@@ -74,7 +76,15 @@ msgstr "order_items"
 msgid "Complete Order"
 msgstr "تکمیل خرید"
 
-#: .\templates\order\order_create.html:103
-#: .\templates\order\order_create.html:110
+#: .\templates\order\order_create.html:84
+msgid "Submit"
+msgstr "ارسال"
+
+#: .\templates\order\order_create.html:109
+#: .\templates\order\order_create.html:116
 msgid "Toman"
 msgstr "تومان"
+
+#: .\views.py:19
+msgid "you can not proceed to checkout page because your cart is empty."
+msgstr "شما نمی تواننید وارد صفحه تصویه حساب شوید چون سبد خرید شما خالی است."
