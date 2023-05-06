@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'cart',
     'persian_translate',
     'order',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -204,3 +205,7 @@ MESSAGE_TAGS = {
 }
 
 # jalali date settings
+
+
+# zarinpal code
+ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
