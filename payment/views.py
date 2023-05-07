@@ -31,7 +31,6 @@ def payment_process(request):
 
     res = requests.post(url=zarinpal_request_url, data=json.dumps(request_data), headers=request_header)
 
-    print(res.json()['data'])
     data = res.json()['data']
     authority = data['authority']
     order.zarinpal_authority = authority
