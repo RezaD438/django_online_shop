@@ -12,6 +12,7 @@ class Product(models.Model):
     description = RichTextField()
     short_description = models.TextField(blank=True)
     price = models.PositiveIntegerField(default=0)
+    stock = models.PositiveIntegerField(default=0, blank=True)
     active = models.BooleanField(default=True)
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover/', blank=True)
 

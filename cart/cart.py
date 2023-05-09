@@ -24,17 +24,20 @@ class Cart:
         Add the specified product to the cart if it exists
         """
         product_id = str(product.id)
+        if quantity <= product.stock:
+            if product_id not in self.cart:  # agar nabood besaz agar bood ezafe kon
+                self.cart[product_id] = {'quantity': quantity}
 
-        if product_id not in self.cart:  # agar nabood besaz agar bood ezafe kon
-            self.cart[product_id] = {'quantity': quantity}
+            elif replace_current_quantity:
+                self.cart[product_id] = {'quantity': quantity}
 
-        elif replace_current_quantity:
-            self.cart[product_id] = {'quantity': quantity}
+            else:
+                self.cart[product_id]['quantity'] += quantity
+
+            messages.success(self.request, _('Product successfully added to cart'))
 
         else:
-            self.cart[product_id]['quantity'] += quantity
-
-        messages.success(self.request, _('Product successfully added to cart'))
+            messages.error(self.request, _('not enough stock is available'))
 
         self.save()
 
@@ -77,4 +80,9 @@ class Cart:
         self.save()
 
     def get_total_price(self):
+        for item in self.cart.values():
+            if item['quantity'] > item['product_obj'].stock:
+                messages.error(self.request, _('not enough stock is available'))
+                self.remove(item['product_obj'])
+
         return sum(item['quantity'] * item['product_obj'].price for item in self.cart.values())

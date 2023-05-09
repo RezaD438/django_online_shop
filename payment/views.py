@@ -6,6 +6,7 @@ from django.contrib import messages
 
 from django.conf import settings
 from order.models import Order
+from products.models import Product
 
 
 def payment_process(request):
@@ -78,6 +79,10 @@ def payment_callback(request):
                 order.is_paid = True
                 order.ref_id = data['ref_id']
                 order.zarinpal_data = data
+                for item in order.items:
+                    f_product = get_object_or_404(Product, item.product)
+                    messages.success(request, f_product.stock)
+
                 order.save()
 
                 messages.success(request, 'payment successful')
@@ -167,9 +172,18 @@ def payment_callback_sandbox(request):
                 order.is_paid = True
                 order.ref_id = data['RefID']
                 order.zarinpal_data = data
+
+                for item in order.items.all():
+                    messages.success(request, item.product.stock)
+                    item.product.stock = item.product.stock - item.quantity
+                    messages.success(request, item.quantity)
+                    messages.success(request, item.product.stock)
+                    item.product.save()
+
                 order.save()
 
                 messages.success(request, 'payment successful')
+
                 return redirect('home')
 
             elif payment_code == 101:

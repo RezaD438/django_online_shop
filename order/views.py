@@ -29,12 +29,15 @@ def order_create_view(request):
 
             for item in this_cart:
                 new_product = item['product_obj']
-                OrderItem.objects.create(
-                    order=order_obj,
-                    product=new_product,
-                    quantity=item['quantity'],
-                    price=new_product.price,
-                )
+                if item['quantity'] >= new_product.stock:
+                    OrderItem.objects.create(
+                        order=order_obj,
+                        product=new_product,
+                        quantity=item['quantity'],
+                        price=new_product.price,
+                    )
+                else:
+                    messages.error(request, _('not enough stock is available.'))
 
             this_cart.clear()
 
