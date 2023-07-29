@@ -32,7 +32,10 @@ class Cart:
                 self.cart[product_id] = {'quantity': quantity}
 
             else:
-                self.cart[product_id]['quantity'] += quantity
+                if self.cart[product_id]['quantity'] + quantity <= product.stock:
+                    self.cart[product_id]['quantity'] += quantity
+                else:
+                    messages.error(self.request, _('not enough stock is available'))
 
             messages.success(self.request, _('Product successfully added to cart'))
 

@@ -29,7 +29,7 @@ def order_create_view(request):
 
             for item in this_cart:
                 new_product = item['product_obj']
-                if item['quantity'] >= new_product.stock:
+                if item['quantity'] <= new_product.stock:
                     OrderItem.objects.create(
                         order=order_obj,
                         product=new_product,
@@ -41,7 +41,8 @@ def order_create_view(request):
 
             this_cart.clear()
 
-            if request.user.first_name is not None:
+            # if request.user.first_name is not None:
+            if request.user.first_name is None:
                 request.user.first_name = order_obj.first_name
                 request.user.last_name = order_obj.last_name
                 request.user.save()
